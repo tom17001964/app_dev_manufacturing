@@ -1,0 +1,50 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Manufacturing_Society_App.Views"
+             x:Class="Manufacturing_Society_App.DashboardPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <!-- Define Row and Column Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <!-- Top bar -->
+            <RowDefinition Height="*"/>
+            <!-- Main content -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Left menu -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main content -->
+            <ColumnDefinition Width="900"/>
+            <!-- Side panel -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Top Bar -->
+
+        <!-- Menu -->
+     
+         <BoxView Grid.Row="1" Grid.Column="0" Color="#f9f1f1" Margin="-90, -50, 80, 0" />
+
+              
+        <!-- Main Content -->
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" CornerRadius="10" Margin="20">
+            <CollectionView ItemsSource="{Binding Events}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Image Source="{Binding ImagePath}" Aspect="AspectFit" HeightRequest="450"/>
+                            <Label Text="{Binding Title}" FontSize="Medium" HorizontalOptions="Center"/>
+                            <Button Margin= " -40, 0, 0, 0 " Text="Register" Command="{Binding RegisterCommand}" BackgroundColor="#ed3351" TextColor="White" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+        <!-- Side Panel -->
+        <!-- Right Side Panel (Chat) -->
+        <views:ChatView Grid.Row="1" Grid.Column="2" />
+    </Grid>
+</ContentPage>

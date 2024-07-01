@@ -1,0 +1,100 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Manufacturing_Society_App.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid Padding="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Frame BackgroundColor="White"
+               CornerRadius="20"
+               Margin="20">
+            <Grid>
+                <!-- Card with UI Elements -->
+                <Grid VerticalOptions="Start" HorizontalOptions="Center" Margin="0,0,0,0" WidthRequest="350">
+                    <StackLayout Margin="0,0,0,0">
+
+                        <!-- Image Section -->
+                        <HorizontalStackLayout Margin="0,0,0,0">
+                            <!-- First Image -->
+                            
+                            <!-- Second Image -->
+                            <Image Source="C:\Users\JackG\Desktop\Manufacturing_Society_App\Resources\Images\Logo\manufacturing_society_logo.png"
+                                   WidthRequest="300"
+                                   HeightRequest="400"
+                                   HorizontalOptions="Center"
+                                   Margin="10,0,0,0"/>
+                        </HorizontalStackLayout>
+
+                        <!-- Email Address -->
+                        <Label Text="Enter email address"
+                               FontSize="18"
+                               Margin="10,-50,0,0"/>
+                        <Entry x:Name="txtUserName"
+                               Placeholder="Enter email address or username :"
+                               WidthRequest="280"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"
+                               HeightRequest="20"
+                               IsEnabled="True"
+                               Focused="Entry_Focused"
+                               Unfocused="Entry_Unfocused"
+                               Margin="10, 10, 0, 0"/>
+
+                        <!-- Password -->
+                        <Label Text="Enter password"
+                               FontSize="18"
+                               BackgroundColor="Transparent"
+                               Margin="10,10,0,0"/>
+                        <Entry x:Name="txtPassword"
+                               Placeholder="Enter password :"
+                               WidthRequest="280"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"
+                               HeightRequest="20"
+                               IsPassword="True"
+                               IsEnabled="True"
+                               Focused="Entry_Focused"
+                               Unfocused="Entry_Unfocused"
+                               Margin="10, 10, 0, 0"/>
+
+                        <!-- Login Button -->
+                        <Button x:Name="LoginButton"
+                                BackgroundColor="#ed3351"
+                                TextColor="White"
+                                Margin="0,30,60,0"
+                                HeightRequest="35"
+                                FontSize="18"
+                                Text="Log on"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                CornerRadius="5"
+                                Clicked="LoginButton_Click"
+                                IsEnabled="True"/>
+
+                        <!-- Signup Button -->
+                        <Button x:Name="SignUpButton"
+                                BackgroundColor="#ed3351"
+                                TextColor="White"
+                                Margin="0,30,60,0"
+                                HeightRequest="35"
+                                FontSize="18"
+                                Text="Sign Up"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                CornerRadius="5"
+                                Clicked="SignUpButton_Click"
+                                IsEnabled="True"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>
